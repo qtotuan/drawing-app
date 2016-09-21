@@ -1,7 +1,7 @@
 var newColor;
 var color = $(".selected").css("background-color");
 
-$(".controls li").click(function() {
+$(".controls").on("click", "li", function() {
   $(this).siblings().removeClass("selected");
   $(this).addClass("selected");
   color = $(this).css("background-color");
@@ -30,7 +30,9 @@ $("input[type=range]").change(changeColor);
 
 //Add new color to the color controls when user clicks add button
 function addColor () {
-  $("ul").append("<li></li>").css("background", );
+  $("ul").append("<li></li>");
+  $("li").last().css("background", newColor);
+  $("li").click();
 }
 
-//$("#addNewColor").click();
+$("#addNewColor").click(addColor);
